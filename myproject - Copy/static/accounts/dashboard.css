@@ -1,0 +1,224 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+}
+
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f2f2f7;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background-color: #2b2f3a;
+    color: #fff;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 2px solid #444;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+/* Sidebar Header */
+.sidebar-header h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #f1f1f1;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 18px;
+}
+
+.sidebar-menu li a {
+    color: #f4f6f9;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #2f3b48;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-menu li a:hover {
+    background-color: #4CAF50;
+    transform: translateX(5px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Active Link Styling */
+.sidebar-menu li a.active {
+    background-color: #1d2830;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content Area */
+.main-content {
+    background-image: url("/static/bg.jpg");;
+    background-size: cover;
+    background-position: center;
+    /*height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;*/
+    background-attachment: fixed;
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #fff;
+    overflow-y: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Main Content Title */
+.main-content h1 {
+    background: linear-gradient(135deg, #e0e7ff, #c6d8e8);
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    text-decoration: underline;
+}
+
+.main-content p {
+    background: linear-gradient(135deg, #e0e7ff, #c6d8e8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
+
+}
+
+/* Main Section */
+.main-section {
+    background: linear-gradient(135deg, #e0e7ff, #c6d8e8);
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+th, td {
+    padding: 15px 25px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Table Action Buttons */
+a.btn-secondary {
+    background-color: #2f3b48;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: 600;
+}
+
+a.btn-secondary:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px;
+    }
+
+    .sidebar-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .sidebar-menu li {
+        margin: 0;
+    }
+
+    .sidebar-menu li a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .sidebar-header h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .main-content h1 {
+        font-size: 28px;
+    }
+}
+
+/* Hover Effects for Links */
+.sidebar-menu li a:hover, .btn-secondary:hover {
+    background-color: #4CAF50;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

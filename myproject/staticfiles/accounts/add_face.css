@@ -1,0 +1,222 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #444;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Container Wrapper */
+.add-face-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background: black;
+    padding: 30px 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    color: #f1f1f1;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 20px;
+}
+
+.sidebar-menu li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: #3e5f84;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-menu li a:hover {
+    background-color: #4c6c94;
+    transform: translateX(5px);
+}
+
+.sidebar-menu li a.btn-primary {
+    background-color: #1e88e5;
+}
+
+.sidebar-menu li a.btn-primary:hover {
+    background-color: #1976d2;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-left: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Form Title */
+.main-content h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+u {
+    color: #3498db;
+    font-style: normal;
+}
+
+/* Camera Section */
+.camera-section {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.camera-section h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Button Styling */
+#start-camera, #take-photo {
+    background-color: #3498db;
+    color: white;
+    padding: 16px 24px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#start-camera:hover, #take-photo:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+#start-camera:active, #take-photo:active {
+    background-color: #1c5985;
+    transform: translateY(0);
+}
+
+/* Video and Canvas Styling */
+#camera-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+video {
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#canvas {
+    display: none;
+}
+
+/* Photo Container */
+#photo-container {
+    margin-top: 20px;
+}
+
+#photo-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-face-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #start-camera, #take-photo {
+        width: 100%;
+        padding: 18px 0;
+    }
+}

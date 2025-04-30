@@ -1,0 +1,264 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #444;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Container Wrapper */
+.container-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar Styling (Restored to original) */
+.sidebar {
+    width: 250px;
+    background: black;
+    padding: 30px 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.sidebar-header {
+    justify-content: center;
+    display: flex;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    color: #f1f1f1;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 20px;
+}
+
+.sidebar-menu li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: #3e5f84;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-menu li a:hover {
+    background-color: #4c6c94;
+    transform: translateX(5px);
+}
+
+.sidebar-menu li a.btn-primary {
+    background-color: #1e88e5;
+}
+
+.sidebar-menu li a.btn-primary:hover {
+    background-color: #1976d2;
+}
+
+/* Main Content Styling (Adjusted for smaller form) */
+.main-content {
+    flex-grow: 1;
+    padding: 20px; /* Reduced from 40px 30px */
+    background-color: #fff;
+    border-radius: 12px;
+    margin-left: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    max-height: calc(100vh - 100px); /* Limit height to fit screen, accounting for padding and header */
+    overflow-y: auto; /* Add scroll only if content overflows */
+}
+
+/* Form Title */
+.main-content h2 {
+    font-size: 28px; /* Reduced from 34px */
+    font-weight: 700;
+    color: black;
+    margin-bottom: 20px; /* Reduced from 30px */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+u {
+    color: #3498db;
+    font-style: normal;
+}
+
+/* Success message */
+.alert-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px; /* Reduced from 12px 18px */
+    margin-bottom: 15px; /* Reduced from 20px */
+    border-radius: 6px; /* Reduced from 8px */
+    font-weight: 600;
+    font-size: 15px; /* Reduced from 17px */
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced from 25px */
+    max-width: 500px; /* Limit form width to fit screen */
+    margin: 0 auto; /* Center the form */
+}
+
+.form-group {
+    text-align: left;
+    font-size: 16px; /* Reduced from 18px */
+    color: #444;
+    margin-bottom: 15px; /* Reduced from 20px */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* Reduced from 10px */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px 15px; /* Reduced from 15px 20px */
+    font-size: 14px; /* Reduced from 16px */
+    border: 1px solid #ddd;
+    border-radius: 6px; /* Reduced from 8px */
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Reduced shadow */
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2); /* Reduced from 10px */
+    outline: none;
+}
+
+input::placeholder, select::placeholder, textarea::placeholder {
+    color: #aaa;
+}
+
+/* Button Styling */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px; /* Reduced from 16px 24px */
+    font-size: 16px; /* Reduced from 18px */
+    font-weight: 500;
+    border: none;
+    border-radius: 6px; /* Reduced from 8px */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+    width: 100%; /* Ensure button fits form width */
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #1c5985;
+    transform: translateY(0);
+}
+
+/* Hover Effects for Form Inputs */
+input:hover, select:hover, textarea:hover {
+    border-color: #3498db;
+    box-shadow: 0 0 6px rgba(52, 152, 219, 0.1); /* Reduced from 8px */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 10px;
+        max-width: 100%; /* Ensure full width on mobile */
+        max-height: calc(100vh - 80px); /* Adjusted for mobile */
+    }
+    h2 {
+        font-size: 24px; /* Reduced */
+    }
+    form {
+        max-width: 100%; /* Full width on mobile */
+    }
+    button {
+        padding: 12px 0; /* Adjusted for full width */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 10px; /* Further reduced */
+    }
+    .form-group {
+        font-size: 14px; /* Reduced */
+    }
+    label {
+        font-size: 14px; /* Reduced */
+    }
+    input, select, textarea {
+        padding: 8px 12px; /* Further reduced */
+        font-size: 12px; /* Reduced */
+    }
+    button {
+        font-size: 14px; /* Reduced */
+        padding: 10px 0; /* Adjusted */
+    }
+}

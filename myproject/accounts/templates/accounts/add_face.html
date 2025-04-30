@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Face</title>
+    <link rel="stylesheet" href="{% static 'accounts/add_face.css' %}">
+</head>
+<body>
+    <div class="add-face-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>WELCOME</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="{% url 'accounts:register' %}" class="btn btn-primary">Enroll New</a></li>
+                <li><a href="{% url 'accounts:enrollment_data' %}" class="btn btn-primary">Enroll Data</a></li>
+                <li><a href="{% url 'accounts:dashboard' %}" class="btn btn-primary">Dashboard</a></li>
+                <li><a href="#">Add Gait</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h1>Add Face</h1>
+            <div class="camera-section">
+                <h3>Click below to open your camera:</h3>
+                <button id="start-camera" class="btn btn-primary">Click Here to Open Camera</button>
+                <div id="camera-container" style="display:none;">
+                    <video id="video" width="640" height="480" autoplay></video>
+                    <button id="take-photo" class="btn btn-secondary">Take Photo</button>
+                    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+                    <div id="photo-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the elements
+        const startCameraBtn = document.getElementById('start-camera');
+        const cameraContainer = document.getElementById('camera-container');
+        const video = document.getElementById('video');
+        const takePhotoBtn = document.getElementById('take-photo');
+        const canvas = document.getElementById('canvas');
+        const photoContainer = document.getElementById('photo-container');
+
+        // Start Camera
+        startCameraBtn.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+                cameraContainer.style.display = 'block';
+                startCameraBtn.style.display = 'none';
+            } catch (err) {
+                alert('Error accessing camera: ' + err);
+            }
+        });
+
+        // Take Photo
+        takePhotoBtn.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const photo = canvas.toDataURL('image/png');
+            const img = document.createElement('img');
+            img.src = photo;
+            photoContainer.innerHTML = '';
+            photoContainer.appendChild(img);
+        });
+    </script>
+</body>
+</html>
